@@ -1,9 +1,17 @@
 from moviepy.editor import VideoFileClip, ImageClip, CompositeVideoClip, AudioFileClip, CompositeAudioClip
 
-from moviepy.editor import VideoFileClip, AudioFileClip, ImageClip, CompositeAudioClip, CompositeVideoClip
-
 def create_video():
-    delay = float(input("How long dealy between comments(0.0-1.5): "))
+    delay_input = input("How long delay between comments (0.0-1.5): ")
+    try:
+        if delay_input:
+            delay = float(delay_input)
+            if delay < 0.0 or delay > 1.5:
+                delay = 0.2
+        else:
+            delay = 0.2
+    except ValueError:
+        delay = 0.2
+        
     voices = []
     video_and_photos = []
 
