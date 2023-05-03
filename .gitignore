@@ -1,4 +1,5 @@
 secret.py
 /voices
 /ss
-movies
+/movies
+__pycache__
